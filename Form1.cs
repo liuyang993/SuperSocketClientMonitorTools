@@ -155,95 +155,7 @@ namespace SuperSocketClientTest
         //    Console.WriteLine(msg);
         //}
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (client.IsConnected)
-            {
 
-                string sReply = "GETALLCLIENT";
-                byte[] bHead = Encoding.ASCII.GetBytes(@"<cmd>");
-                byte[] bTail = Encoding.ASCII.GetBytes(@"</cmd>");
-                byte[] bData = Encoding.ASCII.GetBytes(sReply);
-
-
-                byte[] rv = new byte[bHead.Length + bTail.Length + bData.Length];
-                System.Buffer.BlockCopy(bHead, 0, rv, 0, bHead.Length);
-                System.Buffer.BlockCopy(bData, 0, rv, bHead.Length, bData.Length);
-                System.Buffer.BlockCopy(bTail, 0, rv, bHead.Length + bData.Length, bTail.Length);
-
-                var str = System.Text.Encoding.Default.GetString(rv);
-
-                client.Send(rv);
-
-                listBox1.Items.Add("send 'GETALLCLIENT' to server");
-                return;
-            }
-            else
-            {
-                var connected = client.ConnectAsync(new IPEndPoint(IPAddress.Parse("127.0.0.1"), 2020));
-                if (client.IsConnected)
-                {
-                    string sReply = "GETALLCLIENT";
-                    byte[] bHead = Encoding.ASCII.GetBytes(@"<cmd>");
-                    byte[] bTail = Encoding.ASCII.GetBytes(@"</cmd>");
-                    byte[] bData = Encoding.ASCII.GetBytes(sReply);
-
-
-                    byte[] rv = new byte[bHead.Length + bTail.Length + bData.Length];
-                    System.Buffer.BlockCopy(bHead, 0, rv, 0, bHead.Length);
-                    System.Buffer.BlockCopy(bData, 0, rv, bHead.Length, bData.Length);
-                    System.Buffer.BlockCopy(bTail, 0, rv, bHead.Length + bData.Length, bTail.Length);
-
-                    var str = System.Text.Encoding.Default.GetString(rv);
-
-                    client.Send(rv);
-                    listBox1.Items.Add("send 'GETALLCLIENT' to server");
-                    return;
-                }
-            }
-
-            //listBox1.BackColor = Color.Red;
-
- 
-            listBox1.Items.Add("error : send 'GETALLCLIENT' to server fail , not connected");
-
-            //var result = AccessTheWebAsync();
-
-
-            // Initialize the client with the receive filter and request handler
-            //client.Initialize(new MyReceiveFilter(), (request) => {
-            //    // handle the received request
-            //    Console.WriteLine(request.Key);
-            //});
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            if (client.IsConnected)
-            {
-                string sReply = @"SETDEBUGLEVEL:0,1";
-                byte[] bHead = Encoding.ASCII.GetBytes(@"<cmd>");
-                byte[] bTail = Encoding.ASCII.GetBytes(@"</cmd>");
-                byte[] bData = Encoding.ASCII.GetBytes(sReply);
-
-
-                byte[] rv = new byte[bHead.Length + bTail.Length + bData.Length];
-                System.Buffer.BlockCopy(bHead, 0, rv, 0, bHead.Length);
-                System.Buffer.BlockCopy(bData, 0, rv, bHead.Length, bData.Length);
-                System.Buffer.BlockCopy(bTail, 0, rv, bHead.Length + bData.Length, bTail.Length);
-
-                var str = System.Text.Encoding.Default.GetString(rv);
-
-
-
-                client.Send(rv);
-                listBox1.Items.Add("send 'SETDEBUGLEVEL' to server");
-            }
-            else
-            {
-                listBox1.Items.Add("error : send 'SETDEBUGLEVEL' to server fail , not connected");
-            }
-        }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
@@ -462,6 +374,62 @@ namespace SuperSocketClientTest
             //    // handle the received request
             //    Console.WriteLine(request.Key);
             //});
+        }
+
+        private void normalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (client.IsConnected)
+            {
+                string sReply = @"SETDEBUGLEVEL:0,1";
+                byte[] bHead = Encoding.ASCII.GetBytes(@"<cmd>");
+                byte[] bTail = Encoding.ASCII.GetBytes(@"</cmd>");
+                byte[] bData = Encoding.ASCII.GetBytes(sReply);
+
+
+                byte[] rv = new byte[bHead.Length + bTail.Length + bData.Length];
+                System.Buffer.BlockCopy(bHead, 0, rv, 0, bHead.Length);
+                System.Buffer.BlockCopy(bData, 0, rv, bHead.Length, bData.Length);
+                System.Buffer.BlockCopy(bTail, 0, rv, bHead.Length + bData.Length, bTail.Length);
+
+                var str = System.Text.Encoding.Default.GetString(rv);
+
+
+
+                client.Send(rv);
+                listBox1.Items.Add("send 'SETDEBUGLEVEL' to server");
+            }
+            else
+            {
+                listBox1.Items.Add("error : send 'SETDEBUGLEVEL' to server fail , not connected");
+            }
+        }
+
+        private void onlyErrorAndWarningToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (client.IsConnected)
+            {
+                string sReply = @"SETDEBUGLEVEL:3,1";
+                byte[] bHead = Encoding.ASCII.GetBytes(@"<cmd>");
+                byte[] bTail = Encoding.ASCII.GetBytes(@"</cmd>");
+                byte[] bData = Encoding.ASCII.GetBytes(sReply);
+
+
+                byte[] rv = new byte[bHead.Length + bTail.Length + bData.Length];
+                System.Buffer.BlockCopy(bHead, 0, rv, 0, bHead.Length);
+                System.Buffer.BlockCopy(bData, 0, rv, bHead.Length, bData.Length);
+                System.Buffer.BlockCopy(bTail, 0, rv, bHead.Length + bData.Length, bTail.Length);
+
+                var str = System.Text.Encoding.Default.GetString(rv);
+
+
+
+                client.Send(rv);
+                listBox1.Items.Add("send 'SETDEBUGLEVEL' to server");
+            }
+            else
+            {
+                listBox1.Items.Add("error : send 'SETDEBUGLEVEL' to server fail , not connected");
+            }
         }
     }
 

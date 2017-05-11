@@ -30,12 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.closeThisSessionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
@@ -58,6 +56,10 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.viewClientsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.setDebugLevelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.normalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.onlyErrorAndWarningToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -67,16 +69,6 @@
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(1042, -1);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "View Client State";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dataGridView1
             // 
@@ -118,16 +110,6 @@
             this.listBox1.TabIndex = 2;
             this.listBox1.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.listBox1_DrawItem);
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(960, -1);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(76, 31);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "SetDebugLevel";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
@@ -149,8 +131,6 @@
             // 
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 373);
             this.panel1.Name = "panel1";
@@ -159,9 +139,10 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(793, 0);
+            this.button3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button3.Location = new System.Drawing.Point(991, 0);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(121, 23);
+            this.button3.Size = new System.Drawing.Size(121, 24);
             this.button3.TabIndex = 5;
             this.button3.Text = "TrySend";
             this.button3.UseVisualStyleBackColor = true;
@@ -169,9 +150,10 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(4, 4);
+            this.textBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.textBox1.Location = new System.Drawing.Point(0, 0);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(782, 20);
+            this.textBox1.Size = new System.Drawing.Size(979, 20);
             this.textBox1.TabIndex = 4;
             // 
             // menuStrip1
@@ -190,6 +172,8 @@
             // 
             // fileToolStripMenuItem
             // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
@@ -198,7 +182,8 @@
             // 
             this.clientToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.setClienMessagetDebugLevelToolStripMenuItem,
-            this.viewClientsToolStripMenuItem});
+            this.viewClientsToolStripMenuItem,
+            this.setDebugLevelToolStripMenuItem});
             this.clientToolStripMenuItem.Name = "clientToolStripMenuItem";
             this.clientToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.clientToolStripMenuItem.Text = "Client";
@@ -330,6 +315,35 @@
             this.viewClientsToolStripMenuItem.Text = "View Clients";
             this.viewClientsToolStripMenuItem.Click += new System.EventHandler(this.viewClientsToolStripMenuItem_Click);
             // 
+            // setDebugLevelToolStripMenuItem
+            // 
+            this.setDebugLevelToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.normalToolStripMenuItem,
+            this.onlyErrorAndWarningToolStripMenuItem});
+            this.setDebugLevelToolStripMenuItem.Name = "setDebugLevelToolStripMenuItem";
+            this.setDebugLevelToolStripMenuItem.Size = new System.Drawing.Size(241, 22);
+            this.setDebugLevelToolStripMenuItem.Text = "SetDebugLevel";
+            // 
+            // normalToolStripMenuItem
+            // 
+            this.normalToolStripMenuItem.Name = "normalToolStripMenuItem";
+            this.normalToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
+            this.normalToolStripMenuItem.Text = "Normal";
+            this.normalToolStripMenuItem.Click += new System.EventHandler(this.normalToolStripMenuItem_Click);
+            // 
+            // onlyErrorAndWarningToolStripMenuItem
+            // 
+            this.onlyErrorAndWarningToolStripMenuItem.Name = "onlyErrorAndWarningToolStripMenuItem";
+            this.onlyErrorAndWarningToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
+            this.onlyErrorAndWarningToolStripMenuItem.Text = "Only error and warning";
+            this.onlyErrorAndWarningToolStripMenuItem.Click += new System.EventHandler(this.onlyErrorAndWarningToolStripMenuItem_Click);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -359,11 +373,8 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.MenuStrip menuStrip1;
@@ -388,6 +399,10 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ToolStripMenuItem viewClientsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem setDebugLevelToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem normalToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem onlyErrorAndWarningToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
     }
 }
 
