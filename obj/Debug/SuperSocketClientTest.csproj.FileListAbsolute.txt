@@ -1,0 +1,15 @@
+E:\DevTools\SuperSocket\SuperSocket.ClientEngine-master\SuperSocketClientTest\bin\Debug\SuperSocketClientTest.exe.config
+E:\DevTools\SuperSocket\SuperSocket.ClientEngine-master\SuperSocketClientTest\bin\Debug\SuperSocketClientTest.exe
+E:\DevTools\SuperSocket\SuperSocket.ClientEngine-master\SuperSocketClientTest\bin\Debug\SuperSocketClientTest.pdb
+E:\DevTools\SuperSocket\SuperSocket.ClientEngine-master\SuperSocketClientTest\bin\Debug\SuperSocket.ClientEngine.dll
+E:\DevTools\SuperSocket\SuperSocket.ClientEngine-master\SuperSocketClientTest\bin\Debug\SuperSocket.ProtoBase.dll
+E:\DevTools\SuperSocket\SuperSocket.ClientEngine-master\SuperSocketClientTest\bin\Debug\SuperSocket.ClientEngine.pdb
+E:\DevTools\SuperSocket\SuperSocket.ClientEngine-master\SuperSocketClientTest\bin\Debug\SuperSocket.ProtoBase.xml
+E:\DevTools\SuperSocket\SuperSocket.ClientEngine-master\SuperSocketClientTest\obj\Debug\SuperSocketClientTest.csprojResolveAssemblyReference.cache
+E:\DevTools\SuperSocket\SuperSocket.ClientEngine-master\SuperSocketClientTest\obj\Debug\SuperSocketClientTest.Properties.Resources.resources
+E:\DevTools\SuperSocket\SuperSocket.ClientEngine-master\SuperSocketClientTest\obj\Debug\SuperSocketClientTest.csproj.GenerateResource.Cache
+E:\DevTools\SuperSocket\SuperSocket.ClientEngine-master\SuperSocketClientTest\obj\Debug\SuperSocketClientTest.exe
+E:\DevTools\SuperSocket\SuperSocket.ClientEngine-master\SuperSocketClientTest\obj\Debug\SuperSocketClientTest.pdb
+E:\DevTools\SuperSocket\SuperSocket.ClientEngine-master\SuperSocketClientTest\bin\Debug\Newtonsoft.Json.dll
+E:\DevTools\SuperSocket\SuperSocket.ClientEngine-master\SuperSocketClientTest\bin\Debug\Newtonsoft.Json.xml
+E:\DevTools\SuperSocket\SuperSocket.ClientEngine-master\SuperSocketClientTest\obj\Debug\SuperSocketClientTest.Form1.resources
